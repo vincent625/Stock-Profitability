@@ -1,0 +1,147 @@
+model:
+  eq:
+    weights:
+      revenue_growth: 0.35
+      operating_margin: 0.35
+      fcf_margin: 0.30
+    revenue_score:
+      intercept: 50.0
+      slope: 200.0
+      min: 0.0
+      max: 100.0
+    operating_margin_score:
+      intercept: 30.0
+      slope: 200.0
+      min: 0.0
+      max: 100.0
+    fcf_margin_score:
+      intercept: 30.0
+      slope: 233.3333333333
+      min: 0.0
+      max: 100.0
+    min_components: 2
+    composite_latest_weight: 0.70
+    composite_history_weight: 0.30
+
+  valuation:
+    weights:
+      pe: 0.40
+      p_fcf: 0.35
+      p_s: 0.25
+    anchors:
+      pe: [10.0, 50.0]
+      p_fcf: [10.0, 60.0]
+      p_s: [1.0, 12.0]
+    pe_exclude_above: 100.0
+    composite_latest_weight: 0.70
+    composite_history_weight: 0.30
+
+  guidance:
+    confidence_factors:
+      High: 1.00
+      High/Medium: 0.95
+      Medium: 0.90
+      Medium/Low: 0.80
+      Low: 0.65
+      N/A: 0.00
+    healthcare_evidence_factor:
+      1: 0.75
+      2: 0.85
+      3: 0.93
+      4: 0.97
+      5: 1.00
+    qqq_evidence_factor:
+      1: 0.75
+      2: 0.85
+      3: 0.90
+      4: 0.95
+      5: 1.00
+    observation_range_weight: 0.20
+    observation_accuracy_weight: 0.80
+
+  qqq_market_scenario:
+    eps_factors:
+      bear: 0.90
+      base: 1.10
+      bull: 1.25
+    min_forward_pe_observations: 5
+    forward_pe_history_cap: 150.0
+    fallback_multiple_factors:
+      bear: 0.70
+      base: 1.00
+      bull: 1.30
+
+  qqq_dcf:
+    years: 5
+    growth_anchor:
+      latest_weight: 0.60
+      median8_weight: 0.40
+      min: -0.05
+      max: 0.25
+    bear:
+      start_delta: -0.10
+      start_min: -0.10
+      start_max: 0.15
+      terminal_year_growth: 0.025
+      discount_rate: 0.12
+      terminal_growth: 0.02
+    base:
+      start_delta: 0.00
+      start_min: 0.00
+      start_max: 0.25
+      terminal_year_growth: 0.05
+      discount_rate: 0.10
+      terminal_growth: 0.03
+    bull:
+      start_delta: 0.08
+      start_min: 0.05
+      start_max: 0.35
+      terminal_year_growth: 0.08
+      discount_rate: 0.09
+      terminal_growth: 0.04
+
+  hybrid_scenario:
+    default_market_weight: 0.50
+    default_fundamental_weight: 0.50
+    fundamental_heavy_weights:
+      moderate: [0.35, 0.65]
+      high: [0.25, 0.75]
+
+  scenario_score:
+    weights:
+      bear: 0.35
+      base: 0.40
+      bull: 0.25
+    bear_range: [-0.60, 0.20]
+    base_range: [-0.20, 0.50]
+    bull_range: [0.00, 1.00]
+
+  fundamental_integrated:
+    weights:
+      eq: 0.30
+      valuation: 0.30
+      guidance: 0.15
+      scenario: 0.25
+    reweight_missing: true
+
+  sentiment:
+    window_weights:
+      d7: 0.20
+      d30: 0.50
+      d90: 0.30
+    confidence_factors:
+      High: 1.00
+      Medium: 0.85
+      Low: 0.65
+    materiality_factors:
+      Major: 1.00
+      Moderate: 0.70
+      Minor: 0.30
+    overlay_coefficient: 0.05
+    overlay_cap_points: 2.50
+    neutral_score: 50.0
+    quadrant:
+      fundamental_high: 55.0
+      fundamental_low: 45.0
+      sentiment_high: 55.0
+      sentiment_low: 45.0

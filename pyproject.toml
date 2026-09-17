@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "key-metrics-profitability"
+version = "0.1.0"
+description = "Reproducible 45-company profitability, valuation, guidance, scenario and news-sentiment research model"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Research project"}]
+dependencies = [
+  "PyYAML>=6.0",
+  "numpy>=1.26",
+  "matplotlib>=3.8",
+  "requests>=2.32",
+]
+
+[project.optional-dependencies]
+live = ["yfinance>=0.2.65"]
+nlp = ["transformers>=4.45", "torch>=2.2"]
+excel = ["XlsxWriter>=3.2"]
+dev = ["pytest>=8.0"]
+all = ["yfinance>=0.2.65", "transformers>=4.45", "torch>=2.2", "XlsxWriter>=3.2", "pytest>=8.0"]
+
+[project.scripts]
+keymetrics = "keymetrics.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
