@@ -17,6 +17,51 @@ The saved September 1 snapshot reflects the model state from this project: the Q
 
 > Research tooling only. This is not investment advice and the scenario values are not price targets.
 
+
+## Latest model results
+
+The repository includes the Excel output for the saved **September 1, 2026** 45-company model snapshot.
+
+**[Download the full Excel model](docs/results/combined_45_centered_sentiment_model.xlsx)**
+
+The workbook contains the executive dashboard, 45-company opportunity ranking, fundamental model, news sentiment inputs, methodology, and source notes.
+
+![Executive dashboard](docs/results/executive_dashboard.png)
+
+### Top 15 opportunity ranking
+
+The table below is embedded directly from the Excel model output so GitHub visitors can see the current result without opening the workbook.
+
+| Rank | Ticker | Universe | Fundamental | Adj. sentiment | Overlay | Opportunity | Catalyst risk | Quadrant |
+|---:|---|---|---:|---:|---:|---:|---:|---|
+| 1 | **REGN** | Healthcare | 69.62 | 69.60 | +0.98 | **70.60** | 70 | High Fundamentals / Positive Catalyst |
+| 2 | **META** | QQQ | 66.19 | 59.80 | +0.49 | **66.68** | 65 | High Fundamentals / Positive Catalyst |
+| 3 | **SNY** | Healthcare | 65.97 | 65.30 | +0.54 | **66.50** | 60 | High Fundamentals / Positive Catalyst |
+| 4 | **RHHBY** | Healthcare | 64.95 | 72.60 | +1.13 | **66.08** | 60 | High Fundamentals / Positive Catalyst |
+| 5 | **VRTX** | Healthcare | 62.48 | 78.20 | +1.41 | **63.89** | 80 | High Fundamentals / Positive Catalyst |
+| 6 | **BMY** | Healthcare | 63.67 | 54.00 | +0.20 | **63.87** | 85 | Neutral / Watch |
+| 7 | **NVDA** | QQQ | 61.92 | 80.90 | +1.55 | **63.47** | 65 | High Fundamentals / Positive Catalyst |
+| 8 | **AMGN** | Healthcare | 60.97 | 63.60 | +0.48 | **61.44** | 55 | High Fundamentals / Positive Catalyst |
+| 9 | **TMO** | Healthcare | 60.82 | 64.00 | +0.49 | **61.31** | 40 | High Fundamentals / Positive Catalyst |
+| 10 | **MSFT** | QQQ | 60.31 | 75.90 | +0.91 | **61.22** | 55 | High Fundamentals / Positive Catalyst |
+| 11 | **ABT** | Healthcare | 60.46 | 68.00 | +0.63 | **61.09** | 45 | High Fundamentals / Positive Catalyst |
+| 12 | **ABBV** | Healthcare | 60.10 | 68.60 | +0.65 | **60.75** | 70 | High Fundamentals / Positive Catalyst |
+| 13 | **GSK** | Healthcare | 59.48 | 65.00 | +0.52 | **60.01** | 70 | High Fundamentals / Positive Catalyst |
+| 14 | **NVS** | Healthcare | 58.65 | 60.40 | +0.52 | **59.17** | 90 | High Fundamentals / Positive Catalyst |
+| 15 | **PFE** | Healthcare | 58.23 | 55.95 | +0.21 | **58.44** | 45 | High Fundamentals / Positive Catalyst |
+
+Snapshot summary:
+
+- **Best opportunity:** REGN — 70.60
+- **Average Fundamental Score:** 50.04
+- **Average Opportunity Score:** 50.69
+- **Average adjusted sentiment:** 65.52
+- **Largest positive sentiment overlay:** +1.80 points
+- **Largest negative sentiment overlay:** -1.07 points
+- **Neutral sentiment impact:** exactly 0 points
+
+> The ranking above is a saved model snapshot, not live market data. Re-run the pipeline to update prices, fundamentals, guidance, scenario values, and news sentiment.
+
 ## 1. Model architecture
 
 ### Fundamental Integrated Score
